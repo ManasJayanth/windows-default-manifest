@@ -584,6 +584,7 @@ PACKAGE_URL=
 ac_unique_file="default-manifest.rc"
 ac_subst_vars='LTLIBOBJS
 LIBOBJS
+RC_FLAGS
 WINDRES
 INSTALL_DATA
 INSTALL_SCRIPT
@@ -1974,6 +1975,17 @@ esac
 else
   WINDRES="$ac_cv_prog_WINDRES"
 fi
+
+
+case "${host_cpu}" in
+  i?86)
+	RC_FLAGS="-F pe-i386"
+	;;
+  x86_64)
+	RC_FLAGS="-F pe-x86-64"
+	;;
+esac
+
 
 
 ac_config_files="$ac_config_files Makefile"

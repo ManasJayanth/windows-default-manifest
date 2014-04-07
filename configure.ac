@@ -20,4 +20,15 @@ esac
 
 AC_CHECK_TOOL(WINDRES, windres)
 
+case "${host_cpu}" in
+  i?86)
+	RC_FLAGS="-F pe-i386"
+	;;
+  x86_64)
+	RC_FLAGS="-F pe-x86-64"
+	;;
+esac
+
+AC_SUBST(RC_FLAGS)
+
 AC_OUTPUT(Makefile)

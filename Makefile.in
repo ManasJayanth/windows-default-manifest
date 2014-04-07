@@ -15,6 +15,7 @@ libdir:=@libdir@
 INSTALL_DATA:=@INSTALL_DATA@
 
 WINDRES=@WINDRES@
+RC_FLAGS=@RC_FLAGS@
 
 SRC=default-manifest.rc
 
@@ -23,7 +24,7 @@ TARGET=default-manifest.o
 all: $(srcdir)/configure Makefile $(TARGET)
 
 $(TARGET): $(SRC)
-	$(WINDRES) $< -o $@
+	$(WINDRES) $(RC_FLAGS) $< -o $@
 
 install: all
 	mkdir -p $(DESTDIR)$(libdir)
