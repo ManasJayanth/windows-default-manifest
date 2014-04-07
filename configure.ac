@@ -3,17 +3,17 @@ dnl Autoconf configure script for cygrunsrv.
 AC_PREREQ(2.60)dnl
 AC_INIT(default-manifest.rc)
 
-AC_CANONICAL_SYSTEM
+AC_CANONICAL_HOST
 
 AC_PROG_INSTALL
 
-case "${target}" in
+case "${host}" in
   *-cygwin)
   	;;
   *-mingw*)
   	;;
   *)
-  	echo "The only supported targets are Cygwin and MingW."
+  	echo "The only supported hosts are Cygwin and MingW."
 	exit 1
 	;;
 esac
