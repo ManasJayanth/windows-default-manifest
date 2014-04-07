@@ -1,0 +1,48 @@
+# Makefile.in for default-manifest.
+
+# Place to install target
+DESTDIR=
+
+SHELL:=@SHELL@
+VPATH:=@srcdir@
+srcdir:=@srcdir@
+objdir:=.
+
+prefix:=@prefix@
+exec_prefix:=@exec_prefix@
+libdir:=@libdir@
+
+INSTALL_DATA:=@INSTALL_DATA@
+
+WINDRES=@WINDRES@
+
+SRC=default-manifest.rc
+
+TARGET=default-manifest.o
+
+all: $(srcdir)/configure Makefile $(TARGET)
+
+$(TARGET): $(SRC)
+	$(WINDRES) $< -o $@
+
+install: all
+	mkdir -p $(DESTDIR)$(libdir)
+	$(INSTALL_DATA) $(TARGET) $(DESTDIR)$(libdir)/$(TARGET)
+
+uninstall:
+	-rm -f $(DESTDIR)$(libdir)/$(TARGET)
+
+clean:
+	rm -f *.o *.stackdump
+
+distclean: clean
+	rm -f Makefile config.cache config.status config.log
+
+Makefile: $(srcdir)/Makefile.in config.status
+	CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+config.status: configure $(gcc_version_trigger)
+	$(SHELL) ./config.status --recheck
+
+$(srcdir)/configure: $(srcdir)/configure.ac
+	cd $(srcdir) && autoconf
