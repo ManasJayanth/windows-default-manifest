@@ -12,6 +12,7 @@ prefix:=@prefix@
 exec_prefix:=@exec_prefix@
 libdir:=@libdir@
 
+INSTALL:=@INSTALL@
 INSTALL_DATA:=@INSTALL_DATA@
 
 WINDRES=@WINDRES@
