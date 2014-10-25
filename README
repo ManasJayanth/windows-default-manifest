@@ -1,6 +1,6 @@
 The purpose of this project is to create and install a default manifest
 file to be used by GCC to make applications by default compatible with
-all Windows version up to the latest one.  This is required since
+all Windows version up to the latest one.  This is required starting with
 Windows 8.1 and Windows Server 2012 R2, because applications without
 compatibility manifest are treated as compatible only with the oldest
 Windows version still supported by the compatibility layer.  On Windows
