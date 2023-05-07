@@ -1,0 +1,19 @@
+{
+  "checksum": "0cc961f41dbf4ff5ab5654751a4ba36e",
+  "root": "windows-default-manifest@link-dev:./package.json",
+  "node": {
+    "windows-default-manifest@link-dev:./package.json": {
+      "id": "windows-default-manifest@link-dev:./package.json",
+      "name": "windows-default-manifest",
+      "version": "link-dev:./package.json",
+      "source": {
+        "type": "link-dev",
+        "path": ".",
+        "manifest": "package.json"
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  }
+}
