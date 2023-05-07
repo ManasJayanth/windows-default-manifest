@@ -1,0 +1,6 @@
+*~
+_esy
+config.*
+node_modules
+Makefile
+*.o
